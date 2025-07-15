@@ -1,12 +1,68 @@
 ---
-import Layout from '../components/Layout.astro'
+import '../styles/global.css';
 ---
 
-<Layout>
-  <!-- Your page content -->
-  <section class="hero">
-    <h1>Welcome to CGIArray</h1>
-    <p>Discover high-quality CGI animation loops, 3D assets, and motion graphics — optimized for the web, games, and social media.</p>
-    <a href="/animations" class="btn-primary">Browse Animations</a>
-  </section>
-</Layout>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CGIArray</title>
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+</head>
+
+<body>
+  <!-- Logo + Search -->
+  <div class="logo-row">
+    <a href="/" aria-label="Home">
+      <img src="/images/web-logo.png" alt="CGIArray Logo" class="logo" />
+    </a>
+    <div class="search-container">
+      <i id="search-icon" class="fas fa-search search-icon" aria-hidden="true"></i>
+      <input
+        id="search-input"
+        type="search"
+        placeholder="Search..."
+        class="search-input"
+        hidden
+      />
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav role="navigation" aria-label="Main navigation">
+    <ul>
+      <li><a href="/"><i class="fas fa-house"></i></a></li>
+      <li><a href="/animations">Animations</a></li>
+      <li><a href="/assets">3D Assets</a></li>
+      <li><a href="/templates">Templates</a></li>
+      <li><a href="/plugins">Plugins</a></li>
+      <li><a href="/tutorials">Tutorials</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/licensing">Licensing</a></li>
+    </ul>
+  </nav>
+
+  <script>
+    const searchIcon = document.getElementById('search-icon');
+    const searchInput = document.getElementById('search-input');
+
+    searchIcon.addEventListener('click', (e) => {
+      e.stopPropagation();
+      searchIcon.style.display = 'none';
+      searchInput.removeAttribute('hidden');
+      searchInput.focus();
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!searchInput.contains(e.target)) {
+        searchInput.setAttribute('hidden', '');
+        searchIcon.style.display = 'inline-block';
+      }
+    });
+  </script>
+</body>
