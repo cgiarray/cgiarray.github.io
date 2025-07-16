@@ -1,0 +1,63 @@
+---
+// No props needed for now
+---
+
+<!-- Logo + Search -->
+<div class="logo-row">
+  <a href="/" aria-label="Home">
+    <img src="/images/web-logo.png" alt="CGIArray Logo" class="logo" />
+  </a>
+  <div class="search-container">
+    <i id="search-icon" class="fas fa-search search-icon" aria-hidden="true"></i>
+    <input
+      id="search-input"
+      type="search"
+      placeholder="Search..."
+      class="search-input"
+      hidden
+    />
+  </div>
+</div>
+
+<!-- Navigation -->
+<nav role="navigation" aria-label="Main navigation">
+  <ul>
+    <!-- Home -->
+    <li><a href="/"><i class="fas fa-house"></i></a></li>
+
+    <!-- Animations Dropdown -->
+    <li class="dropdown">
+      <a href="/animations">Animations</a>
+      <ul class="dropdown-menu">
+        <li><a href="#"><i class="fas fa-sync-alt loop-icon"></i> Loops</a></li>
+        <li><a href="#"><i class="fas fa-random"></i> Transitions</a></li>
+        <li><a href="#"><i class="fas fa-magic"></i> Effects</a></li>
+      </ul>
+    </li>
+
+    <!-- 3D Assets Dropdown -->
+    <li class="dropdown">
+      <a href="/assets">3D Assets</a>
+      <ul class="dropdown-menu">
+        <li><a href="#"><i class="fas fa-user-astronaut"></i> Characters</a></li>
+        <li><a href="#"><i class="fas fa-cubes"></i> Props</a></li>
+      </ul>
+    </li>
+
+    <!-- Templates Dropdown -->
+    <li class="dropdown">
+      <a href="/templates">Templates</a>
+      <ul class="dropdown-menu">
+        <li><a href="#"><i class="fas fa-film"></i> Video Templates</a></li>
+        <li><a href="#"><i class="fas fa-code"></i> Web Templates</a></li>
+      </ul>
+    </li>
+
+    <!-- Single Links -->
+    <li><a href="/plugins">Plugins</a></li>
+    <li><a href="/tutorials">Tutorials</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/licensing">Licensing</a></li>
+  </ul>
+</nav>

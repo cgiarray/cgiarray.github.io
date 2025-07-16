@@ -1,0 +1,26 @@
+---
+---
+
+// Inject a script to handle showing/hiding the search input
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const searchIcon = document.getElementById('search-icon');
+    const searchInput = document.getElementById('search-input');
+
+    if (searchIcon && searchInput) {
+      searchIcon.addEventListener('click', (e) => {
+        e.stopPropagation();
+        searchIcon.style.display = 'none';
+        searchInput.removeAttribute('hidden');
+        searchInput.focus();
+      });
+
+      document.addEventListener('click', (e) => {
+        if (!searchInput.contains(e.target)) {
+          searchInput.setAttribute('hidden', '');
+          searchIcon.style.display = 'inline-block';
+        }
+      });
+    }
+  });
+</script>
