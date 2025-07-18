@@ -34,7 +34,7 @@ nav ul li a:hover {
   color: #fff;
 }
 
-/* Dropdown Styles */
+/* ----------- Dropdown (Desktop) ----------- */
 nav ul li.dropdown {
   position: relative;
   padding-bottom: 4px;
@@ -103,25 +103,21 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
   color: #0f111a;
 }
 
+
 /* ------------------ MOBILE ------------------ */
 @media (max-width: 768px) {
   nav {
-    /* margin-top: 12px; */
     position: relative;
   }
 
-
   nav ul.nav-links {
     position: fixed;
-    
-    top: 65px; /* <- Increased from 60px */
+    top: 65px;
     left: 0;
     width: 100%;
     height: calc(100vh - 60px);
     overflow-y: auto;
     background-color: #1c1c28;
-    /* padding: 10; */
-   
     flex-direction: column;
     align-items: flex-start;
     gap: 0;
@@ -132,31 +128,23 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
     z-index: 10000;
   }
 
-
   nav ul.nav-links.active {
     transform: translateX(0);
-
-    /* padding: 0px; */
     opacity: 1;
     pointer-events: auto;
-    border-top: 0px solid red;
   }
 
   nav ul.nav-links li {
-     font-size: 20px;      /* increase font size */
+    font-size: 20px;
     width: 100%;
-     margin: 8px 0;        /* vertical spacing */
-    /* margin: 10px; */
-    /* padding: 12px 10px; */
-    padding: 16px 24px;   /* bigger clickable area */
-    border-top: 60  ;
-    transform: translateY(-115px); /* This was the current fix for the borde issue */
+    margin: 8px 0;
+    padding: 16px 24px;
+    transform: translateY(-115px); /* existing position fix */
   }
 
   nav ul li.dropdown > ul.dropdown-menu {
     display: none;
     padding-left: 24px;
-    /* margin: 8px 0 16px 0; */
     margin: 4px 0 4px 16px;
     border-left: 2px solid #444;
     background: none;
@@ -180,12 +168,11 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
     align-items: center;
     width: 100%;
     padding: 2px 2px;
-    
     cursor: pointer;
   }
 
   nav ul li.dropdown.open > a {
-    background-color: rgba(255 255 255 / 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
   .dropdown-menu li a {
@@ -193,9 +180,10 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
   }
 
   .dropdown-menu li a:hover {
-    background-color: rgba(255 255 255 / 0.1);
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
+  /* Hamburger Button */
   .hamburger-button {
     display: flex;
     position: fixed;
@@ -234,6 +222,7 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
     transform: translateY(-8px) rotate(-45deg);
   }
 
+  /* Mobile Search */
   .search-bar {
     display: none;
     flex-direction: column;
@@ -255,9 +244,8 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
     cursor: pointer;
     margin-left: auto;
   }
-
-  
 }
+
 
 /* ------------------ DESKTOP OVERRIDES ------------------ */
 @media (min-width: 769px) {
@@ -277,6 +265,7 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
 }
 
 
+/* ------------------ DROPDOWN TOGGLE (ARROW) ------------------ */
 .dropdown-toggle {
   background: none;
   border: none;
@@ -289,7 +278,7 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
   align-items: center;
   justify-content: center;
   vertical-align: middle;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .dropdown-toggle:hover {
@@ -302,25 +291,16 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
   color: inherit;
 }
 
-/* Arrow default state */
-.dropdown-toggle {
-  transition: transform 0.3s ease;
-  transform: rotate(0deg);
-}
-
-/* When dropdown is hovered on desktop */
+/* Arrow rotates on hover (desktop only) */
 @media (min-width: 769px) {
   li.dropdown:hover > .mobile-link-wrapper > .dropdown-toggle {
-    transform: rotate(180deg); /* upside down */
+    transform: rotate(180deg);
   }
 }
 
 
 
-
- * {
+ /* * {
   outline: 1px solid green;
-}
+} */
  
-
-/* Arrow head animation */
