@@ -1,0 +1,99 @@
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #1c1c28;
+  border-radius: 32px;
+  padding: 6px 12px;
+  gap: 8px;
+  width: 400px;
+  max-width: 100%;
+}
+
+.search-category {
+  background-color: #1c1c28;
+  border: none;
+  color: #ccc;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  outline: none;
+  appearance: none;
+  cursor: pointer;
+}
+
+.search-input-bar {
+  flex: 1;
+  padding: 6px 10px;
+  border: none;
+  background: transparent;
+  color: #fff;
+  font-size: 14px;
+  outline: none;
+}
+
+.search-button {
+  background: transparent;
+  border: none;
+  color: #ddd;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 20px;
+  transition: color 0.3s ease;
+}
+
+.search-button:hover {
+  color: #f39c12;
+}
+
+/* Desktop - search toggle button hidden, search bar visible */
+.search-toggle-button {
+  display: none;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .logo-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Align children left */
+    gap: 12px;
+  }
+
+  /* Show search toggle button on mobile */
+  .search-toggle-button {
+    display: inline-block;
+    order: -1;           /* Show before logo */
+    margin-left: 0;
+    margin-right: 12px;
+    background: none;
+    border: none;
+    color: #aaa;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+
+  /* Hide search bar by default */
+  .search-bar {
+    display: none;
+    width: 100%;
+    max-width: none;
+    flex-grow: 1;
+    margin-left: 12px;
+    gap: 8px;
+    margin-top: -8px;
+  }
+
+  /* Show search bar when active */
+  .search-bar.active {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  /* Hide search toggle button when search bar is active */
+  .search-toggle-button.hide {
+    display: none;
+  }
+}

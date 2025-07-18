@@ -1,5 +1,5 @@
 ---
-import Layout from '../Layouts/Layout.astro';
+import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import SearchToggleScript from '../components/SearchToggleScript.astro';
 ---
@@ -11,7 +11,7 @@ import SearchToggleScript from '../components/SearchToggleScript.astro';
   <section class="hero">
     <h1>Welcome to CGIArray</h1>
     <p>Discover stunning CGI animation loops, 3D assets, and motion graphics — optimized for the web, creators, and small studios.</p>
-  </section
+  </section>
 
   <!-- Search Toggle Script -->
   <script>
@@ -28,7 +28,7 @@ import SearchToggleScript from '../components/SearchToggleScript.astro';
         });
 
         document.addEventListener('click', (e) => {
-          if (!searchInput.contains(e.target)) {
+          if (!searchInput.contains(e.target as Node)) {
             searchInput.setAttribute('hidden', '');
             searchIcon.style.display = 'inline-block';
           }

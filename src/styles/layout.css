@@ -1,0 +1,31 @@
+/* layout.css */
+
+.header-wrapper {
+  padding-top: 24px; /* or adjust for spacing at top */
+  position: relative;
+  z-index: 11001;
+  background-color: #0f111a;
+
+}
+
+.logo-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin: 0;
+  justify-content: flex-start; /* Align top row fully left */
+  width: 100%;
+  max-width: 100%;
+
+}
+
+.logo {
+  height: 36px;
+  cursor: pointer;
+}
+
+/* Mobile styles */
+
+  .hamburger {
+    display: flex; /* show hamburger on mobile */
+  }

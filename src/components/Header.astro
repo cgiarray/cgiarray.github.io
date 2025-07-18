@@ -1,64 +1,90 @@
 ---
-// No props needed for now
+import HamburgerToggle from '../components/hamburgerToggle.astro';
+import SearchToggle from '../components/SearchToggle.astro';
 ---
 
-<!-- Logo + Search -->
-<div class="logo-row">
-  <a href="/" aria-label="Home">
-    <img src="/images/web-logo.png" alt="CGIArray Logo" class="logo" />
-  </a>
-  <div class="search-container">
-    <i id="search-icon" class="fas fa-search search-icon" aria-hidden="true"></i>
-    <input
-      id="search-input"
-      type="search"
-      placeholder="Search..."
-      class="search-input"
-      hidden
-    />
+<div class="header-wrapper">
+  <!-- Row 1: Logo + Search -->
+  <div class="logo-row">
+    <!-- Logo -->
+    <a href="/" aria-label="Home">
+      <img src="/images/web-logo.png" alt="CGIArray Logo" class="logo" />
+    </a>
+
+    <!-- Mobile Search Toggle -->
+    <button id="search-toggle-button" class="search-toggle-button" aria-label="Toggle search">
+      <i class="fas fa-search"></i>
+    </button>
+
+    <!-- Search Bar -->
+    <div class="search-bar" id="search-bar">
+      <select class="search-category" aria-label="Search category">
+        <option value="all">All</option>
+        <option value="templates">Templates</option>
+        <option value="3d-assets">3D Assets</option>
+        <option value="plugins">Plugins</option>
+        <option value="animations">Animations</option>
+      </select>
+      <input
+        id="search-input"
+        type="search"
+        placeholder="Search..."
+        class="search-input-bar"
+        aria-label="Search site content"
+      />
+      <button id="search-submit-button" class="search-button" aria-label="Submit search">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
   </div>
-</div>
 
-<!-- Navigation -->
-<nav role="navigation" aria-label="Main navigation">
-  <ul>
-    <!-- Home -->
-    <li><a href="/"><i class="fas fa-house"></i></a></li>
+  <!-- Row 2: Navigation Menu -->
+  <nav role="navigation" aria-label="Main navigation" id="main-nav">
+    <ul class="nav-links">
+      <li><a href="/"><i class="fas fa-house"></i></a></li>
 
-    <!-- Animations Dropdown -->
-    <li class="dropdown">
-      <a href="/animations">Animations</a>
-      <ul class="dropdown-menu">
-        <li><a href="#"><i class="fas fa-sync-alt loop-icon"></i> Loops</a></li>
-        <li><a href="#"><i class="fas fa-random"></i> Transitions</a></li>
-        <li><a href="#"><i class="fas fa-magic"></i> Effects</a></li>
-      </ul>
-    </li>
+      <li class="dropdown">
+        <a href="/animations" aria-haspopup="true" aria-expanded="false">Animations</a>
+        <ul class="dropdown-menu" aria-label="submenu">
+          <li><a href="#"><i class="fas fa-sync-alt loop-icon"></i> Loops</a></li>
+          <li><a href="#"><i class="fas fa-random"></i> Transitions</a></li>
+          <li><a href="#"><i class="fas fa-magic"></i> Effects</a></li>
+        </ul>
+      </li>
 
-    <!-- 3D Assets Dropdown -->
-    <li class="dropdown">
-      <a href="/assets">3D Assets</a>
-      <ul class="dropdown-menu">
-        <li><a href="#"><i class="fas fa-user-astronaut"></i> Characters</a></li>
-        <li><a href="#"><i class="fas fa-cubes"></i> Props</a></li>
-      </ul>
-    </li>
+      <li class="dropdown">
+        <a href="/assets" aria-haspopup="true" aria-expanded="false">3D Assets</a>
+        <ul class="dropdown-menu" aria-label="submenu">
+          <li><a href="#"><i class="fas fa-user-astronaut"></i> Characters</a></li>
+          <li><a href="#"><i class="fas fa-cubes"></i> Props</a></li>
+        </ul>
+      </li>
 
-    <!-- Templates Dropdown -->
-    <li class="dropdown">
-    <a href="/templates">Templates</a>
-    <ul class="dropdown-menu">
-        <li><a href="#"><span class="app-icon ae-icon">Ae</span> Adobe After Effects</a></li>
-        <li><a href="#"><span class="app-icon pr-icon">Pr</span> Adobe Premiere Pro</a></li>
-        <li><a href="#"><span class="app-icon c4d-icon">M</span> Maxon Cinema 4D</a></li>
+      <li class="dropdown">
+        <a href="/templates" aria-haspopup="true" aria-expanded="false">Templates</a>
+        <ul class="dropdown-menu" aria-label="submenu">
+          <li><a href="#"><span class="app-icon ae-icon">Ae</span> Adobe After Effects</a></li>
+          <li><a href="#"><span class="app-icon pr-icon">Pr</span> Adobe Premiere Pro</a></li>
+          <li><a href="#"><span class="app-icon c4d-icon">M</span> Maxon Cinema 4D</a></li>
+        </ul>
+      </li>
+
+      <li><a href="/plugins">Plugins</a></li>
+      <li><a href="/tutorials">Tutorials</a></li>
+      <li><a href="/about">About</a></li>
+      <li><a href="/contact">Contact</a></li>
+      <li><a href="/licensing">Licensing</a></li>
     </ul>
-    </li>
 
-    <!-- Single Links -->
-    <li><a href="/plugins">Plugins</a></li>
-    <li><a href="/tutorials">Tutorials</a></li>
-    <li><a href="/about">About</a></li>
-    <li><a href="/contact">Contact</a></li>
-    <li><a href="/licensing">Licensing</a></li>
-  </ul>
-</nav>
+    <!-- Hamburger Icon -->
+    <button id="hamburger-toggle" class="hamburger-button" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </nav>
+
+  <!-- Scripts -->
+  <HamburgerToggle />
+  <SearchToggle />
+</div> 

@@ -1,0 +1,326 @@
+/* ------------------ DESKTOP ------------------ */
+nav {
+  margin-top: 8px;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul.nav-links {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 24px 0;
+  margin: 0;
+  border-bottom: 1px solid #222;
+  gap: 32px;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #aaa;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+nav ul li a:hover {
+  color: #fff;
+}
+
+/* Dropdown Styles */
+nav ul li.dropdown {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+nav ul li.dropdown > ul.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  display: block;
+  flex-direction: column;
+  min-width: 220px;
+  padding: 10px 0;
+  background: rgba(20, 20, 30, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  list-style: none;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+nav ul li.dropdown:hover > ul.dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-menu li a {
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  color: #ccc;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dropdown-menu li a i {
+  width: 24px;
+  height: 24px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  color: #ccc;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.dropdown-menu li a:hover i {
+  background: white;
+  color: #0f111a;
+}
+
+/* ------------------ MOBILE ------------------ */
+@media (max-width: 768px) {
+  nav {
+    /* margin-top: 12px; */
+    position: relative;
+  }
+
+
+  nav ul.nav-links {
+    position: fixed;
+    
+    top: 65px; /* <- Increased from 60px */
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    overflow-y: auto;
+    background-color: #1c1c28;
+    /* padding: 10; */
+   
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    transform: translateX(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    z-index: 10000;
+  }
+
+
+  nav ul.nav-links.active {
+    transform: translateX(0);
+
+    /* padding: 0px; */
+    opacity: 1;
+    pointer-events: auto;
+    border-top: 0px solid red;
+  }
+
+  nav ul.nav-links li {
+     font-size: 20px;      /* increase font size */
+    width: 100%;
+     margin: 8px 0;        /* vertical spacing */
+    /* margin: 10px; */
+    /* padding: 12px 10px; */
+    padding: 16px 24px;   /* bigger clickable area */
+    border-top: 60  ;
+    transform: translateY(-115px); /* This was the current fix for the borde issue */
+  }
+
+  nav ul li.dropdown > ul.dropdown-menu {
+    display: none;
+    padding-left: 24px;
+    /* margin: 8px 0 16px 0; */
+    margin: 4px 0 4px 16px;
+    border-left: 2px solid #444;
+    background: none;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    pointer-events: auto !important;
+    flex-direction: column;
+  }
+
+  nav ul li.dropdown > ul.dropdown-menu.open {
+    display: flex !important;
+  }
+
+  nav ul li.dropdown > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 2px 2px;
+    
+    cursor: pointer;
+  }
+
+  nav ul li.dropdown.open > a {
+    background-color: rgba(255 255 255 / 0.1);
+  }
+
+  .dropdown-menu li a {
+    padding: 8px 24px;
+  }
+
+  .dropdown-menu li a:hover {
+    background-color: rgba(255 255 255 / 0.1);
+  }
+
+  .hamburger-button {
+    display: flex;
+    position: fixed;
+    top: 12px;
+    right: 16px;
+    z-index: 11001;
+    width: 30px;
+    height: 24px;
+    flex-direction: column;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .hamburger-button span {
+    display: block;
+    height: 3px;
+    width: 24px;
+    margin: 3px auto;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .hamburger-button.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger-button.open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger-button.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .search-bar {
+    display: none;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px;
+    background-color: #1c1c28;
+  }
+
+  .search-bar.active {
+    display: flex;
+  }
+
+  .search-toggle-button {
+    display: block;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: auto;
+  }
+
+  
+}
+
+/* ------------------ DESKTOP OVERRIDES ------------------ */
+@media (min-width: 769px) {
+  .hamburger-button {
+    display: none !important;
+  }
+
+  .search-toggle-button {
+    display: none;
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+}
+
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 6px;
+  cursor: pointer;
+  color: #aaa;
+  font-size: 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  transition: color 0.3s ease;
+}
+
+.dropdown-toggle:hover {
+  color: #fff;
+}
+
+.dropdown-toggle i {
+  pointer-events: none;
+  font-size: inherit;
+  color: inherit;
+}
+
+/* Arrow default state */
+.dropdown-toggle {
+  transition: transform 0.3s ease;
+  transform: rotate(0deg);
+}
+
+/* When dropdown is hovered on desktop */
+@media (min-width: 769px) {
+  li.dropdown:hover > .mobile-link-wrapper > .dropdown-toggle {
+    transform: rotate(180deg); /* upside down */
+  }
+}
+
+
+
+
+ * {
+  outline: 1px solid green;
+}
+ 
+
+/* Arrow head animation */

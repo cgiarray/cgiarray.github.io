@@ -1,0 +1,68 @@
+/* app-icons.css */
+
+.ae-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  font-weight: 700;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: #61DAFB;
+  background-color: #000;
+  border-radius: 4px;
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.pr-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  font-weight: 700;
+  font-family: 'Arial', sans-serif;
+  font-size: 14px;
+  color: #9900FF;
+  background-color: #1B0033;
+  border-radius: 4px;
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.c4d-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+  font-weight: 700;
+  font-family: 'Arial', sans-serif;
+  font-size: 13px;
+  color: #E6230A;
+  background-color: #001e3c;
+  border-radius: 4px;
+  user-select: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Hover styles for each icon */
+nav ul li.dropdown ul.dropdown-menu li a:hover .ae-icon {
+  background-color: #61DAFB;
+  color: #000;
+}
+
+nav ul li.dropdown ul.dropdown-menu li a:hover .pr-icon {
+  background-color: #9900FF;
+  color: #fff;
+}
+
+nav ul li.dropdown ul.dropdown-menu li a:hover .c4d-icon {
+  background-color: #E6230A;
+  color: #001e3c;
+}

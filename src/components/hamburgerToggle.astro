@@ -1,0 +1,59 @@
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', () => {
+    const toggleBtn = document.getElementById('hamburger-toggle');
+    const navMenu = document.querySelector('nav > ul');
+
+    if (!toggleBtn || !navMenu) {
+      console.warn('❌ Could not find toggle button or nav menu');
+      return;
+    }
+
+    // Toggle main mobile menu
+    toggleBtn.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+      toggleBtn.classList.toggle('open');
+    });
+
+    const dropdownItems = navMenu.querySelectorAll('li.dropdown');
+
+    dropdownItems.forEach((dropdownItem) => {
+      const link = dropdownItem.querySelector('a');
+      const submenu = dropdownItem.querySelector('ul.dropdown-menu');
+
+      if (!link || !submenu) return;
+
+      // Create the toggle button (arrow)
+      const toggleButton = document.createElement('button');
+      toggleButton.classList.add('dropdown-toggle');
+      toggleButton.setAttribute('aria-expanded', 'false');
+      toggleButton.setAttribute('aria-label', 'Toggle submenu');
+      toggleButton.textContent = '˅';
+
+      // Add a wrapper to group link and button (for layout)
+      const wrapper = document.createElement('div');
+      wrapper.classList.add('mobile-link-wrapper');
+
+      // Move <a> and button into wrapper
+      dropdownItem.insertBefore(wrapper, link);
+      wrapper.appendChild(link);
+      wrapper.appendChild(toggleButton);
+
+      // Handle click on either link or button
+      const toggleSubmenu = () => {
+        const isOpen = submenu.classList.toggle('open');
+        toggleButton.classList.toggle('rotated', isOpen);
+        toggleButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      };
+
+      toggleButton.addEventListener('click', toggleSubmenu);
+      link.addEventListener('click', (e) => {
+        // Prevent navigation in mobile if submenu exists
+        if (window.innerWidth <= 768) {
+          e.preventDefault();
+          toggleSubmenu();
+        }
+      });
+    });
+  });
+</script>
