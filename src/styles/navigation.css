@@ -196,12 +196,12 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
     border-left: 3px solid #fff;
   }
 
-  /* Hamburger Button */
+  /* Hamburger Button — stays on right */
   .hamburger-button {
     display: flex;
     position: fixed;
     top: 24px;
-    right: 20px; /* moved more left */
+    right: 20px;
     z-index: 15000;
     width: 40px;
     height: 32px;
@@ -238,23 +238,33 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
     transform: rotate(-45deg) translate(8px, -8px);
   }
 
-  /* Search Bar */
-  .search-bar {
-    display: none;
-    flex-direction: column;
-    gap: 8px;
-    padding: 12px;
-    background-color: #1c1c28;
-  }
+ .search-bar {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  padding: 0 12px;
+  transform: translateY(-10px);
+  transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+  background-color: #1c1c28;
+  flex-direction: column;
+  gap: 8px;
+  display: flex; /* IMPORTANT: Always present in the DOM */
+}
+.search-bar.active {
+  max-height: 200px; /* adjust depending on content */
+  opacity: 1;
+  padding: 12px;
+  transform: translateY(0);
+}
 
-  .search-bar.active {
-    display: flex;
-  }
 
-  /* Mobile Search Input width constraint */
-  .search-container input[type="text"] {
+
+  .search-container input[type="text"],
+  .search-input-bar {
     width: 100%;
-    max-width: 240px;
+    max-width: 220px;
+    font-size: 16px;
+    padding: 8px;
   }
 
   /* Search Toggle Button */
@@ -272,9 +282,9 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
   .logo-row {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 16px;
-    padding-left: 4px;
+    justify-content: space-between;
+    padding: 16px;
+    gap: 8px;
   }
 
   .logo {
@@ -282,6 +292,8 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
     cursor: pointer;
   }
 }
+
+
 
 /* ------------------ DESKTOP OVERRIDES ------------------ */
 @media (min-width: 769px) {
