@@ -4,41 +4,50 @@ import SearchToggle from '../components/SearchToggle.astro';
 ---
 
 <div class="header-wrapper">
-  <!-- Row 1: Logo + Search -->
+  <!-- Row 1: Logo + Search Toggle on Left + Hamburger on Right -->
   <div class="logo-row">
-    <!-- Logo -->
-    <a href="/" aria-label="Home">
-      <img src="/images/web-logo.png" alt="CGIArray Logo" class="logo" />
-    </a>
+    <div class="left-group">
+      <!-- Logo -->
+      <a href="/" aria-label="Home" class="logo-link">
+        <img src="/images/web-logo.png" alt="CGIArray Logo" class="logo" />
+      </a>
 
-    <!-- Mobile Search Toggle -->
-    <button id="search-toggle-button" class="search-toggle-button" aria-label="Toggle search">
-      <i class="fas fa-search"></i>
-    </button>
-
-    <!-- Search Bar -->
-    <div class="search-bar" id="search-bar">
-      <select class="search-category" aria-label="Search category">
-        <option value="all">All</option>
-        <option value="templates">Templates</option>
-        <option value="3d-assets">3D Assets</option>
-        <option value="plugins">Plugins</option>
-        <option value="animations">Animations</option>
-      </select>
-      <input
-        id="search-input"
-        type="search"
-        placeholder="Search..."
-        class="search-input-bar"
-        aria-label="Search site content"
-      />
-      <button id="search-submit-button" class="search-button" aria-label="Submit search">
+      <!-- Mobile Search Toggle Button (magnifier icon) -->
+      <button id="search-toggle-button" class="search-toggle-button" aria-label="Toggle search">
         <i class="fas fa-search"></i>
       </button>
     </div>
+
+    <!-- Hamburger Icon: keep this outside left-group, on right -->
+    <button id="hamburger-toggle" class="hamburger-button" aria-label="Toggle menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </div>
 
-  <!-- Row 2: Navigation Menu -->
+  <!-- Search Bar: Outside logo-row, toggled visible on mobile or always on desktop -->
+  <div class="search-bar" id="search-bar" role="search" aria-label="Site search">
+    <select class="search-category" aria-label="Search category">
+      <option value="all">All</option>
+      <option value="templates">Templates</option>
+      <option value="3d-assets">3D Assets</option>
+      <option value="plugins">Plugins</option>
+      <option value="animations">Animations</option>
+    </select>
+    <input
+      id="search-input"
+      type="search"
+      placeholder="Search..."
+      class="search-input-bar"
+      aria-label="Search site content"
+    />
+    <button id="search-submit-button" class="search-button" aria-label="Submit search">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+
+  <!-- Navigation Menu -->
   <nav role="navigation" aria-label="Main navigation" id="main-nav">
     <ul class="nav-links">
       <li><a href="/"><i class="fas fa-house"></i></a></li>
@@ -75,16 +84,9 @@ import SearchToggle from '../components/SearchToggle.astro';
       <li><a href="/contact">Contact</a></li>
       <li><a href="/licensing">Licensing</a></li>
     </ul>
-
-    <!-- Hamburger Icon -->
-    <button id="hamburger-toggle" class="hamburger-button" aria-label="Toggle menu" aria-expanded="false">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
   </nav>
 
   <!-- Scripts -->
   <HamburgerToggle />
   <SearchToggle />
-</div> 
+</div>

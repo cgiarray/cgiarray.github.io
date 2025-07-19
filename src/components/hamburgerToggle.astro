@@ -22,33 +22,42 @@
 
       if (!link || !submenu) return;
 
-      // Create the toggle button (arrow)
+      // Create dropdown toggle arrow button
       const toggleButton = document.createElement('button');
       toggleButton.classList.add('dropdown-toggle');
       toggleButton.setAttribute('aria-expanded', 'false');
       toggleButton.setAttribute('aria-label', 'Toggle submenu');
       toggleButton.textContent = '˅';
 
-      // Add a wrapper to group link and button (for layout)
+      // Wrap link and toggle button together
       const wrapper = document.createElement('div');
       wrapper.classList.add('mobile-link-wrapper');
-
-      // Move <a> and button into wrapper
       dropdownItem.insertBefore(wrapper, link);
       wrapper.appendChild(link);
       wrapper.appendChild(toggleButton);
 
-      // Handle click on either link or button
       const toggleSubmenu = () => {
         const isOpen = submenu.classList.toggle('open');
         toggleButton.classList.toggle('rotated', isOpen);
         toggleButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-        dropdownItem.classList.toggle('open', isOpen); // Add/remove open class on li for styling
+        dropdownItem.classList.toggle('open', isOpen);
+
+        // Highlight this item if submenu is open, remove highlight from others
+        dropdownItems.forEach((item) => {
+          if (item !== dropdownItem) {
+            item.classList.remove('active-link');
+          }
+        });
+        if (isOpen) {
+          dropdownItem.classList.add('active-link');
+        } else {
+          dropdownItem.classList.remove('active-link');
+        }
       };
 
       toggleButton.addEventListener('click', toggleSubmenu);
+
       link.addEventListener('click', (e) => {
-        // Prevent navigation in mobile if submenu exists
         if (window.innerWidth <= 768) {
           e.preventDefault();
           toggleSubmenu();
@@ -56,25 +65,21 @@
       });
     });
 
-    // Close mobile submenu if clicking outside
+    // Close open submenu when clicking outside
     document.addEventListener('click', (event) => {
-      // Only run if mobile menu is active (optional, but more efficient)
       if (!navMenu.classList.contains('active')) return;
 
       dropdownItems.forEach((dropdownItem) => {
         const submenu = dropdownItem.querySelector('ul.dropdown-menu.open');
-        if (submenu) {
-          // If click outside this dropdownItem, close submenu
-          if (!dropdownItem.contains(event.target)) {
-            submenu.classList.remove('open');
-            dropdownItem.classList.remove('open');
+        if (submenu && !dropdownItem.contains(event.target)) {
+          submenu.classList.remove('open');
+          dropdownItem.classList.remove('open');
+          dropdownItem.classList.remove('active-link');
 
-            // Also rotate toggle button back and update aria-expanded
-            const toggleButton = dropdownItem.querySelector('button.dropdown-toggle');
-            if (toggleButton) {
-              toggleButton.classList.remove('rotated');
-              toggleButton.setAttribute('aria-expanded', 'false');
-            }
+          const toggleButton = dropdownItem.querySelector('button.dropdown-toggle');
+          if (toggleButton) {
+            toggleButton.classList.remove('rotated');
+            toggleButton.setAttribute('aria-expanded', 'false');
           }
         }
       });

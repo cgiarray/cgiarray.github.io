@@ -142,8 +142,6 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
 
   nav ul li.dropdown > ul.dropdown-menu {
     display: none;
-    margin: 0;
-    padding: 0;
     background: rgba(20, 20, 30, 0.8);
     border: 1.5px solid rgba(255, 255, 255, 0.15);
     border-radius: 12px;
@@ -173,10 +171,6 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
     background-color: rgba(255, 255, 255, 0.1);
   }
 
-  .dropdown-menu li {
-    width: 100%;
-  }
-
   .dropdown-menu li a {
     width: 100%;
     padding: 10px 16px;
@@ -189,35 +183,51 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
     background-color: rgba(255, 255, 255, 0.1);
   }
 
+  nav ul li.dropdown.active-link > .mobile-link-wrapper > a {
+    font-weight: bold;
+    font-size: medium;
+    color: #fff;
+  }
+
+  nav ul.nav-links li a.clicked {
+    font-weight: 700;
+    color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left: 3px solid #fff;
+  }
+
   /* Hamburger Button */
   .hamburger-button {
     display: flex;
     position: fixed;
-    top: 12px;
-    right: 16px;
-    z-index: 11001;
-    width: 30px;
-    height: 24px;
+    top: 24px;
+    right: 28px; /* moved a bit left from 24px right for visual tweak */
+    z-index: 15000;
+    width: 40px;
+    height: 32px;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
     background: none;
     border: none;
     cursor: pointer;
     padding: 0;
+    gap: 6px;
+    transition: right 0.3s ease;
   }
 
   .hamburger-button span {
     display: block;
-    height: 3px;
-    width: 24px;
-    margin: 3px auto;
+    height: 4px;
+    width: 32px;
     background-color: #fff;
     border-radius: 2px;
     transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
   }
 
   .hamburger-button.open span:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
+    transform: rotate(45deg) translate(6px, 6px);
   }
 
   .hamburger-button.open span:nth-child(2) {
@@ -225,9 +235,10 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
   }
 
   .hamburger-button.open span:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
+    transform: rotate(-45deg) translate(8px, -8px);
   }
 
+  /* Search Bar */
   .search-bar {
     display: none;
     flex-direction: column;
@@ -240,6 +251,7 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
     display: flex;
   }
 
+  /* Search Toggle Button */
   .search-toggle-button {
     display: block;
     background: none;
@@ -247,7 +259,22 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
     color: #fff;
     font-size: 20px;
     cursor: pointer;
-    margin-left: auto;
+    margin-left: 8px; /* slight spacing from logo */
+  }
+
+  /* Logo Row */
+  .logo-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    padding-left: 2px;
+    /* padding: 8px; */
+  }
+
+  .logo {
+    height: 36px;
+    cursor: pointer;
   }
 }
 
@@ -262,6 +289,18 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
     display: flex;
     align-items: center;
     gap: 8px;
+  }
+
+  .logo-row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 24px;
+    padding: 16px 32px;
+  }
+
+  .logo {
+    height: 36px;
   }
 }
 
@@ -297,10 +336,8 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
   }
 }
 
-
-/* Remove outline debugging if needed */
-/*
- * {
-  outline: 1px solid green;
+/* Search input width constraint */
+.search-container input[type="text"] {
+  width: 100%;
+  max-width: 300px;
 }
-*/
