@@ -201,7 +201,7 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
     display: flex;
     position: fixed;
     top: 24px;
-    right: 28px; /* moved a bit left from 24px right for visual tweak */
+    right: 20px; /* moved more left */
     z-index: 15000;
     width: 40px;
     height: 32px;
@@ -251,6 +251,12 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
     display: flex;
   }
 
+  /* Mobile Search Input width constraint */
+  .search-container input[type="text"] {
+    width: 100%;
+    max-width: 240px;
+  }
+
   /* Search Toggle Button */
   .search-toggle-button {
     display: block;
@@ -259,7 +265,7 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
     color: #fff;
     font-size: 20px;
     cursor: pointer;
-    margin-left: 8px; /* slight spacing from logo */
+    margin-left: 8px;
   }
 
   /* Logo Row */
@@ -268,8 +274,7 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
     align-items: center;
     justify-content: flex-start;
     gap: 16px;
-    padding-left: 2px;
-    /* padding: 8px; */
+    padding-left: 4px;
   }
 
   .logo {
@@ -336,7 +341,7 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
   }
 }
 
-/* Search input width constraint */
+/* Universal Search Input Constraint */
 .search-container input[type="text"] {
   width: 100%;
   max-width: 300px;
