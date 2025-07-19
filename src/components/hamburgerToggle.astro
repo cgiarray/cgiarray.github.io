@@ -1,4 +1,3 @@
-
 <script is:inline>
   document.addEventListener('DOMContentLoaded', () => {
     const toggleBtn = document.getElementById('hamburger-toggle');
@@ -44,6 +43,7 @@
         const isOpen = submenu.classList.toggle('open');
         toggleButton.classList.toggle('rotated', isOpen);
         toggleButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        dropdownItem.classList.toggle('open', isOpen); // Add/remove open class on li for styling
       };
 
       toggleButton.addEventListener('click', toggleSubmenu);
@@ -52,6 +52,30 @@
         if (window.innerWidth <= 768) {
           e.preventDefault();
           toggleSubmenu();
+        }
+      });
+    });
+
+    // Close mobile submenu if clicking outside
+    document.addEventListener('click', (event) => {
+      // Only run if mobile menu is active (optional, but more efficient)
+      if (!navMenu.classList.contains('active')) return;
+
+      dropdownItems.forEach((dropdownItem) => {
+        const submenu = dropdownItem.querySelector('ul.dropdown-menu.open');
+        if (submenu) {
+          // If click outside this dropdownItem, close submenu
+          if (!dropdownItem.contains(event.target)) {
+            submenu.classList.remove('open');
+            dropdownItem.classList.remove('open');
+
+            // Also rotate toggle button back and update aria-expanded
+            const toggleButton = dropdownItem.querySelector('button.dropdown-toggle');
+            if (toggleButton) {
+              toggleButton.classList.remove('rotated');
+              toggleButton.setAttribute('aria-expanded', 'false');
+            }
+          }
         }
       });
     });

@@ -103,7 +103,6 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
   color: #0f111a;
 }
 
-
 /* ------------------ MOBILE ------------------ */
 @media (max-width: 768px) {
   nav {
@@ -139,23 +138,22 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
     width: 100%;
     margin: 8px 0;
     padding: 16px 24px;
-    transform: translateY(-115px); /* existing position fix */
   }
 
   nav ul li.dropdown > ul.dropdown-menu {
     display: none;
-    padding-left: 24px;
-    margin: 4px 0 4px 16px;
-    border-left: 2px solid #444;
-    background: none;
-    box-shadow: none;
-    border-radius: 0;
-    border: none;
+    margin: 0;
+    padding: 0;
+    background: rgba(20, 20, 30, 0.8);
+    border: 1.5px solid rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
     opacity: 1 !important;
     visibility: visible !important;
     transform: none !important;
     pointer-events: auto !important;
     flex-direction: column;
+    width: 100%;
   }
 
   nav ul li.dropdown > ul.dropdown-menu.open {
@@ -175,8 +173,16 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
     background-color: rgba(255, 255, 255, 0.1);
   }
 
+  .dropdown-menu li {
+    width: 100%;
+  }
+
   .dropdown-menu li a {
-    padding: 8px 24px;
+    width: 100%;
+    padding: 10px 16px;
+    margin: 0;
+    display: block;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
   }
 
   .dropdown-menu li a:hover {
@@ -222,7 +228,6 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
     transform: translateY(-8px) rotate(-45deg);
   }
 
-  /* Mobile Search */
   .search-bar {
     display: none;
     flex-direction: column;
@@ -246,15 +251,11 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
   }
 }
 
-
 /* ------------------ DESKTOP OVERRIDES ------------------ */
 @media (min-width: 769px) {
-  .hamburger-button {
-    display: none !important;
-  }
-
+  .hamburger-button,
   .search-toggle-button {
-    display: none;
+    display: none !important;
   }
 
   .search-bar {
@@ -263,7 +264,6 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
     gap: 8px;
   }
 }
-
 
 /* ------------------ DROPDOWN TOGGLE (ARROW) ------------------ */
 .dropdown-toggle {
@@ -291,7 +291,6 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
   color: inherit;
 }
 
-/* Arrow rotates on hover (desktop only) */
 @media (min-width: 769px) {
   li.dropdown:hover > .mobile-link-wrapper > .dropdown-toggle {
     transform: rotate(180deg);
@@ -299,8 +298,9 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
 }
 
 
-
- /* * {
+/* Remove outline debugging if needed */
+/*
+ * {
   outline: 1px solid green;
-} */
- 
+}
+*/
