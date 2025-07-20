@@ -2,9 +2,16 @@
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/Header.astro';
 import SearchToggleScript from '../components/SearchToggleScript.astro';
+
+const meta = {
+  title: "CGIArray – Web Animations & 3D Assets for Creators",
+  description: "Download stunning CGI animation loops, 3D assets, and motion graphics — optimized for the web, creators, and small studios.",
+  image: "/images/social-share.jpg",
+  url: "https://cgiarray.com"
+};
 ---
 
-<Layout title="CGIArray">
+<Layout {...meta}>
   <Header />
 
   <!-- Hero Section -->
@@ -28,7 +35,7 @@ import SearchToggleScript from '../components/SearchToggleScript.astro';
         });
 
         document.addEventListener('click', (e) => {
-          if (!searchInput.contains(e.target as Node)) {
+          if (!searchInput.contains(e.target)) {
             searchInput.setAttribute('hidden', '');
             searchIcon.style.display = 'inline-block';
           }

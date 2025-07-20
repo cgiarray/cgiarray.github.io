@@ -40,29 +40,3 @@
 
 
 
-@media (max-width: 768px) {
-  /* Align logo-row items to left and keep order */
-  .logo-row {
-    justify-content: flex-start !important;
-  }
-
-  /* Remove auto margin pushing search icon right */
-  .search-toggle-button {
-    margin-left: 8px; /* small space from logo */
-  }
-
-  /* Optional: explicitly set order */
-  .logo-row > a {
-    order: 1;
-  }
-
-  .search-toggle-button {
-    order: 2;
-  }
-
-  /* Optional: make sure hamburger button stays on right */
-  .hamburger-button {
-    right: 16px;
-    left: auto;
-  }
-}

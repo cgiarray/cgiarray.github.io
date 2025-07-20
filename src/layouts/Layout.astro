@@ -5,7 +5,13 @@ import '../styles/search.css';
 import '../styles/navigation.css';
 import '../styles/app-icons.css';
 
-const { title = "CGIArray" } = Astro.props;
+// Destructure props with default fallbacks
+const {
+  title = "CGIArray – Web Animations & 3D Assets for Creators",
+  description = "Download stunning CGI animation loops, 3D assets, and motion graphics — optimized for the web, creators, and small studios.",
+  image = "/images/social-share.jpg", // Default OG image
+  url = "https://cgiarray.com"
+} = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -15,14 +21,36 @@ const { title = "CGIArray" } = Astro.props;
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
 
+    <meta name="description" content={description} />
+    <meta name="keywords" content="CGI animation loops, 3D assets, Lottie animations, scroll animation, hero sections, web graphics, motion design" />
+    <meta name="author" content="Sandun Somarathna" />
+    <link rel="canonical" href={url} />
+
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:url" content={url} />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     />
   </head>
+
   <script src="/scripts/hamburger.js" defer></script>
-  
+
   <body>
     <slot />
   </body>

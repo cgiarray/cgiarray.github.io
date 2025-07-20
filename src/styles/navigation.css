@@ -351,6 +351,8 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
   li.dropdown:hover > .mobile-link-wrapper > .dropdown-toggle {
     transform: rotate(180deg);
   }
+
+  
 }
 
 /* Universal Search Input Constraint */
