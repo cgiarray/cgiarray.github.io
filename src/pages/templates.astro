@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/templates.css'; // create this CSS file for templates styles
+
+const title = "Templates – CGIArray";
+const description = "Explore high-quality templates for Adobe After Effects, Premiere Pro, and Cinema 4D. Perfect for motion designers and video editors.";
+const url = "https://cgiarray.com/templates";
+const image = "/images/templates-preview.jpg"; // update with your own image path
+---
+
+<Layout title={title} description={description} url={url} image={image}>
+  <section class="templates-landing">
+    <h1>Templates</h1>
+    <p class="centered-text">
+      Discover premium templates designed to speed up your workflow in Adobe After Effects, Premiere Pro, and Cinema 4D. Crafted for creators who want stunning results fast.
+    </p>
+
+    <ul class="template-categories">
+      <li class="hover-scale hover-glow">
+        <a href="/templates/after-effects" aria-label="Adobe After Effects Templates">
+          <h2 class="underline-hover">Adobe After Effects</h2>
+          <p class="fade-hover">
+            Professionally designed After Effects templates for motion graphics, intros, transitions, and more.
+          </p>
+        </a>
+      </li>
+
+      <li class="hover-scale hover-glow">
+        <a href="/templates/premiere-pro" aria-label="Adobe Premiere Pro Templates">
+          <h2 class="underline-hover">Adobe Premiere Pro</h2>
+          <p class="fade-hover">
+            Editable Premiere Pro templates for seamless video editing, titles, and effects.
+          </p>
+        </a>
+      </li>
+
+      <li class="hover-scale hover-glow">
+        <a href="/templates/cinema4d" aria-label="Cinema 4D Templates">
+          <h2 class="underline-hover">Cinema 4D</h2>
+          <p class="fade-hover">
+            Stunning Cinema 4D project templates for 3D animations and motion design.
+          </p>
+        </a>
+      </li>
+    </ul>
+  </section>
+</Layout>

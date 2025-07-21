@@ -360,3 +360,19 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
   width: 100%;
   max-width: 300px;
 }
+
+/* ---------------Hi light the color of selected mani menu------------  */
+
+.nav-link {
+  display: inline-block;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;  /* Reserve space for the border */
+  transition: border-color 0.2s ease, color 0.2s ease;
+  color: inherit;
+  font-weight: 600;
+}
+
+.nav-link.active {
+  border-bottom-color: #FBC55B;
+  color: #FBC55B;
+}

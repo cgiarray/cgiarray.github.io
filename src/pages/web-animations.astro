@@ -1,0 +1,48 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/web-animations.css'; // import your CSS once here
+
+const title = "Web Animations – CGIArray";
+const description = "Explore high-quality web animations including MP4 3D renders, Lottie, SVG, and simulation loops. Perfect for creators, designers, and developers.";
+const url = "https://cgiarray.com/web-animations";
+const image = "/images/web-animations-preview.jpg";
+---
+
+<Layout title={title} description={description} url={url} image={image}>
+  <section class="web-animations-landing">
+    <h1>Web Animations</h1>
+    <p class="centered-text">
+      Discover a curated collection of stunning web animations — from lightweight vector graphics to rendered 3D loops and simulations.
+      All assets are crafted for modern websites, UI/UX interfaces, and creative projects.
+    </p>
+
+    <ul class="animation-categories">
+      <li class="hover-scale hover-glow">
+        <a href="/web-animations/hero-animations" aria-label="Hero Animations">
+          <h2 class="underline-hover">Hero Animations</h2>
+          <p class="fade-hover">
+            Impactful animations designed for landing page hero sections. Includes high-quality 3D renders, particle effects, and smooth motion that instantly grab attention.
+          </p>
+        </a>
+      </li>
+
+      <li class="hover-scale hover-glow">
+        <a href="/web-animations/footer-animations" aria-label="Footer Animations">
+          <h2 class="underline-hover">Footer Animations</h2>
+          <p class="fade-hover">
+            Elegant, looping animations made for footers or background use. Great for adding subtle movement and visual interest to the bottom of your web pages.
+          </p>
+        </a>
+      </li>
+
+      <li class="hover-scale hover-glow">
+        <a href="/web-animations/vector-animations" aria-label="Vector Animations (SVG + Lottie)">
+          <h2 class="underline-hover">Vector Animations (SVG + Lottie)</h2>
+          <p class="fade-hover">
+            Lightweight SVG and Lottie animations for user interfaces, icons, buttons, and scroll interactions. Perfect for fast-loading, scalable design.
+          </p>
+        </a>
+      </li>
+    </ul>
+  </section>
+</Layout>

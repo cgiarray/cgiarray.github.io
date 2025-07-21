@@ -1,6 +1,10 @@
 ---
 import HamburgerToggle from '../components/hamburgerToggle.astro';
 import SearchToggle from '../components/SearchToggle.astro';
+const currentPath = Astro.url.pathname;
+const isWebAnimationsPage = currentPath.startsWith('/web-animations');
+const isTemplatesPage = currentPath.startsWith('/templates');
+const is3DAssetsPage = currentPath.startsWith('/3d-assets');
 ---
 
 <div class="header-wrapper">
@@ -48,43 +52,65 @@ import SearchToggle from '../components/SearchToggle.astro';
   </div>
 
   <!-- Navigation Menu -->
-  <nav role="navigation" aria-label="Main navigation" id="main-nav">
-    <ul class="nav-links">
-      <li><a href="/"><i class="fas fa-house"></i></a></li>
+<nav role="navigation" aria-label="Main navigation" id="main-nav">
+  <ul class="nav-links">
+    <li><a href="/"><i class="fas fa-house"></i></a></li>
 
-      <li class="dropdown">
-        <a href="/animations" aria-haspopup="true" aria-expanded="false">Animations</a>
-        <ul class="dropdown-menu" aria-label="submenu">
-          <li><a href="#"><i class="fas fa-sync-alt loop-icon"></i> Loops</a></li>
-          <li><a href="#"><i class="fas fa-random"></i> Transitions</a></li>
-          <li><a href="#"><i class="fas fa-magic"></i> Effects</a></li>
-        </ul>
-      </li>
+    <li class="dropdown">
+      <a 
+        href="/web-animations" 
+        class={`nav-link ${isWebAnimationsPage ? 'active' : ''}`} 
+        aria-haspopup="true" 
+        aria-expanded="false"
+      >
+        Web Animations
+      </a>
+      <ul class="dropdown-menu" aria-label="submenu">
+        <li><a href="#"><i class="fas fa-rocket"></i> Hero Animations</a></li>
+        <li><a href="#"><i class="fas fa-angle-double-down"></i> Footer Animations</a></li>
+        <li><a href="#"><i class="fas fa-vector-square"></i> Vector Animations (SVG + Lottie)</a></li>
+      </ul>
+    </li>
 
-      <li class="dropdown">
-        <a href="/assets" aria-haspopup="true" aria-expanded="false">3D Assets</a>
-        <ul class="dropdown-menu" aria-label="submenu">
-          <li><a href="#"><i class="fas fa-user-astronaut"></i> Characters</a></li>
-          <li><a href="#"><i class="fas fa-cubes"></i> Props</a></li>
-        </ul>
-      </li>
+    <li class="dropdown">
+      <a 
+        href="/3d-assets" 
+        class={`nav-link ${is3DAssetsPage ? 'active' : ''}`} 
+        aria-haspopup="true" 
+        aria-expanded="false"
+      >
+        3D Assets
+      </a>
+      <ul class="dropdown-menu">
+        <li><a href="/3d-assets/rigged-characters">Rigged Characters</a></li>
+        <li><a href="/3d-assets/modular-kits">Modular Kits</a></li>
+        <li><a href="/3d-assets/v-tuber-avatars">V-Tuber Avatars</a></li>
+      </ul>
+    </li>
 
-      <li class="dropdown">
-        <a href="/templates" aria-haspopup="true" aria-expanded="false">Templates</a>
-        <ul class="dropdown-menu" aria-label="submenu">
-          <li><a href="#"><span class="app-icon ae-icon">Ae</span> Adobe After Effects</a></li>
-          <li><a href="#"><span class="app-icon pr-icon">Pr</span> Adobe Premiere Pro</a></li>
-          <li><a href="#"><span class="app-icon c4d-icon">M</span> Maxon Cinema 4D</a></li>
-        </ul>
-      </li>
+    <li class="dropdown">
+      <a 
+        href="/templates" 
+        class={`nav-link ${isTemplatesPage ? 'active' : ''}`} 
+        aria-haspopup="true" 
+        aria-expanded="false"
+      >
+        Templates
+      </a>
+      <ul class="dropdown-menu" aria-label="submenu">
+        <li><a href="#"><span class="app-icon ae-icon">Ae</span> Adobe After Effects</a></li>
+        <li><a href="#"><span class="app-icon pr-icon">Pr</span> Adobe Premiere Pro</a></li>
+        <li><a href="#"><span class="app-icon c4d-icon">M</span> Maxon Cinema 4D</a></li>
+      </ul>
+    </li>
 
-      <li><a href="/plugins">Plugins</a></li>
-      <li><a href="/tutorials">Tutorials</a></li>
-      <li><a href="/about">About</a></li>
-      <li><a href="/contact">Contact</a></li>
-      <li><a href="/licensing">Licensing</a></li>
-    </ul>
-  </nav>
+    <li><a href="/plugins">Plugins</a></li>
+    <li><a href="/tutorials">Tutorials</a></li>
+    <li><a href="/about">About</a></li>
+    <li><a href="/contact">Contact</a></li>
+    <li><a href="/licensing">Licensing</a></li>
+  </ul>
+</nav>
 
   <!-- Scripts -->
   <HamburgerToggle />

@@ -1,0 +1,59 @@
+/* effects.css – smooth, reusable animations */
+
+:root {
+  --transition-speed: 0.3s;
+  --hover-scale: 1.03;
+  --hover-glow: 0 4px 14px rgba(255, 255, 255, 0.2);
+}
+
+/* Fade & scale on hover */
+.hover-scale {
+  transition: transform var(--transition-speed) ease;
+}
+.hover-scale:hover {
+  transform: scale(var(--hover-scale));
+}
+
+/* Soft glow on hover */
+.hover-glow {
+  transition: box-shadow var(--transition-speed) ease;
+}
+.hover-glow:hover {
+  box-shadow: var(--hover-glow);
+}
+
+/* Underline animation */
+.underline-hover {
+  position: relative;
+  display: inline-block;
+}
+.underline-hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width var(--transition-speed) ease;
+}
+.underline-hover:hover::after {
+  width: 100%;
+}
+
+/* Icon rotation on hover */
+.icon-rotate-hover {
+  display: inline-block;
+  transition: transform var(--transition-speed) ease;
+}
+.icon-rotate-hover:hover {
+  transform: rotate(10deg);
+}
+
+/* Smooth opacity fade */
+.fade-hover {
+  transition: opacity var(--transition-speed) ease;
+}
+.fade-hover:hover {
+  opacity: 0.7;
+}

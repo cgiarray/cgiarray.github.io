@@ -1,0 +1,47 @@
+---
+import Layout from '../layouts/Layout.astro';
+import '../styles/3d-assets.css';
+
+const title = "3D Assets – CGIArray";
+const description = "High-quality 3D assets including rigged characters, modular kits, and V-Tuber avatars for games and creative projects.";
+const url = "https://cgiarray.com/3d-assets";
+const image = "/images/assets-preview.jpg"; // Update if you have one
+---
+
+<Layout title={title} description={description} url={url} image={image}>
+  <section class="assets-landing">
+    <h1>3D Assets</h1>
+    <p class="centered-text">
+      Discover premium 3D assets for your projects — from rigged characters to modular kits and V-Tuber avatars.
+    </p>
+
+    <ul class="asset-categories">
+      <li class="hover-scale hover-glow">
+        <a href="/3d-assets/rigged-characters" aria-label="Rigged Game Ready Characters">
+          <h2 class="underline-hover">Rigged Game Ready Characters</h2>
+          <p class="fade-hover">
+            Fully rigged, animation-ready characters for Unity, Unreal, and other engines.
+          </p>
+        </a>
+      </li>
+
+      <li class="hover-scale hover-glow">
+        <a href="/3d-assets/modular-kits" aria-label="Modular Kits">
+          <h2 class="underline-hover">Game Ready Modular Kits</h2>
+          <p class="fade-hover">
+            Snap-together kits for building game environments, scenes, or objects.
+          </p>
+        </a>
+      </li>
+
+      <li class="hover-scale hover-glow">
+        <a href="/3d-assets/v-tuber-avatars" aria-label="V-Tuber Avatars">
+          <h2 class="underline-hover">V-Tuber Avatars</h2>
+          <p class="fade-hover">
+            Stylized, customizable avatars designed for live streaming and virtual presence.
+          </p>
+        </a>
+      </li>
+    </ul>
+  </section>
+</Layout>

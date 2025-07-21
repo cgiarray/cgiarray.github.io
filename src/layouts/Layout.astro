@@ -4,6 +4,10 @@ import '../styles/layout.css';
 import '../styles/search.css';
 import '../styles/navigation.css';
 import '../styles/app-icons.css';
+import Footer from '../components/Footer.astro'; 
+import Header from '../components/Header.astro';
+
+
 
 // Destructure props with default fallbacks
 const {
@@ -26,6 +30,16 @@ const {
     <meta name="author" content="Sandun Somarathna" />
     <link rel="canonical" href={url} />
 
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="theme-color" content="#ffffff">
+
+
+
     <!-- Google Fonts: Inter -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
@@ -42,6 +56,9 @@ const {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={image} />
 
+    <!-- Web page effects    -->
+  <link rel="stylesheet" href="/styles/effects.css">  <!--his loads the effects CSS globally for your entire site-->
+
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -50,8 +67,10 @@ const {
   </head>
 
   <script src="/scripts/hamburger.js" defer></script>
-
+  
   <body>
+    <Header />
     <slot />
+    <Footer />
   </body>
 </html>
