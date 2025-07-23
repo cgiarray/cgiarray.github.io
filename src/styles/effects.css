@@ -1,3 +1,4 @@
+
 /* effects.css – smooth, reusable animations */
 
 :root {
@@ -57,3 +58,4 @@
 .fade-hover:hover {
   opacity: 0.7;
 }
+

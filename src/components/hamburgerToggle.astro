@@ -8,7 +8,6 @@
       return;
     }
 
-    // Toggle main mobile menu
     toggleBtn.addEventListener('click', () => {
       navMenu.classList.toggle('active');
       toggleBtn.classList.toggle('open');
@@ -19,22 +18,9 @@
     dropdownItems.forEach((dropdownItem) => {
       const link = dropdownItem.querySelector('a');
       const submenu = dropdownItem.querySelector('ul.dropdown-menu');
+      const toggleButton = dropdownItem.querySelector('button.dropdown-toggle');
 
-      if (!link || !submenu) return;
-
-      // Create dropdown toggle arrow button
-      const toggleButton = document.createElement('button');
-      toggleButton.classList.add('dropdown-toggle');
-      toggleButton.setAttribute('aria-expanded', 'false');
-      toggleButton.setAttribute('aria-label', 'Toggle submenu');
-      toggleButton.textContent = '˅';
-
-      // Wrap link and toggle button together
-      const wrapper = document.createElement('div');
-      wrapper.classList.add('mobile-link-wrapper');
-      dropdownItem.insertBefore(wrapper, link);
-      wrapper.appendChild(link);
-      wrapper.appendChild(toggleButton);
+      if (!link || !submenu || !toggleButton) return;
 
       const toggleSubmenu = () => {
         const isOpen = submenu.classList.toggle('open');
@@ -42,12 +28,12 @@
         toggleButton.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         dropdownItem.classList.toggle('open', isOpen);
 
-        // Highlight this item if submenu is open, remove highlight from others
         dropdownItems.forEach((item) => {
           if (item !== dropdownItem) {
             item.classList.remove('active-link');
           }
         });
+
         if (isOpen) {
           dropdownItem.classList.add('active-link');
         } else {
@@ -65,7 +51,6 @@
       });
     });
 
-    // Close open submenu when clicking outside
     document.addEventListener('click', (event) => {
       if (!navMenu.classList.contains('active')) return;
 

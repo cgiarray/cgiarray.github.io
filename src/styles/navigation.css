@@ -24,10 +24,12 @@ nav ul li a {
   text-decoration: none;
   color: #aaa;
   font-weight: 600;
-  transition: color 0.3s ease;
+  /* transition: color 0.3s ease; */
   display: inline-flex;
   align-items: center;
   gap: 8px;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.3s ease, color 0.3s ease;
 }
 
 nav ul li a:hover {
@@ -363,16 +365,32 @@ nav ul li.dropdown:hover > ul.dropdown-menu {
 
 /* ---------------Hi light the color of selected mani menu------------  */
 
-.nav-link {
+ /* .nav-link {
   display: inline-block;
+  line-height: 1.5rem;
+  
   padding-bottom: 2px;
-  border-bottom: 2px solid transparent;  /* Reserve space for the border */
+  border-bottom: 2px solid transparent; 
   transition: border-color 0.2s ease, color 0.2s ease;
   color: inherit;
   font-weight: 600;
-}
+} */
 
 .nav-link.active {
   border-bottom-color: #FBC55B;
   color: #FBC55B;
-}
+} 
+
+
+
+
+/* test */
+/* .nav-link,
+.nav-link.active {
+  transition: none !important;
+  transform: none !important;
+  animation: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: none !important;
+} */
