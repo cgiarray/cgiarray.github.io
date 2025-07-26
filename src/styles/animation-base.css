@@ -1,0 +1,32 @@
+.animation-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.animation-card {
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  width: 360px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animation-card video {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.animation-card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+}
+
+.animation-card p {
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-size: 1rem;
+  color: #ccc;
+}

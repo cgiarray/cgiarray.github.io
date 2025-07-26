@@ -1,50 +1,5 @@
-.animation-category-page {
-  padding: 2rem 1rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  color: #eee;
-}
-
-.animation-category-page h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.5rem;
-  color: #FBC55B; /* Brand accent color */
-}
-
-.animation-category-page p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: #ccc;
-}
-
-.animation-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-}
-
+/* Hero animation-specific tweaks */
 .animation-card {
-  background: rgba(30, 30, 40, 0.7);
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.animation-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
-}
-
-.animation-card video {
-  width: 100%;
-  border-radius: 8px;
-  display: block;
-  margin-bottom: 0.8rem;
-}
-
-.animation-card p {
-  font-size: 1rem;
-  text-align: center;
-  color: #ddd;
+  width: 400px;
+  background-color: #111; /* darker for hero */
 }
