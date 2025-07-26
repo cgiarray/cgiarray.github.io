@@ -53,7 +53,8 @@ const is3DAssetsPage = currentPath.startsWith('/3d-assets');
     <ul class="nav-links">
       <li><a href="/"><i class="fas fa-house"></i></a></li>
 
-      <li class="dropdown">
+  <!-- Dropdown item for Web Animations -->
+      <!-- <li class="dropdown">
         <div class="mobile-link-wrapper">
           <a href="/web-animations" class={`nav-link ${isWebAnimationsPage ? 'active' : ''}`} aria-haspopup="true" aria-expanded="false">
             Web Animations
@@ -65,7 +66,28 @@ const is3DAssetsPage = currentPath.startsWith('/3d-assets');
           <li><a href="#"><i class="fas fa-angle-double-down"></i> Footer Animations</a></li>
           <li><a href="#"><i class="fas fa-vector-square"></i> Vector Animations (SVG + Lottie)</a></li>
         </ul>
-      </li>
+      </li> -->
+
+      
+<li class="dropdown">
+  <div class="mobile-link-wrapper">
+    <a href="/web-animations" class={`nav-link ${isWebAnimationsPage ? 'active' : ''}`}>
+      Web Animations
+    </a>
+    <button class="dropdown-toggle" aria-expanded="false" aria-label="Toggle submenu">˅</button>
+  </div>
+  <ul class="dropdown-menu">
+    <li><a href="/web-animations/hero-animations"><i class="fas fa-rocket"></i> Hero Animations</a></li>
+    <li><a href="/web-animations/footer-animations"><i class="fas fa-angle-double-down"></i> Footer Animations</a></li>
+    <li><a href="/web-animations/vector-animations"><i class="fas fa-vector-square"></i> Vector Animations</a></li>
+  </ul>
+</li>
+
+
+
+
+  
+      
 
       <li class="dropdown">
         <div class="mobile-link-wrapper">

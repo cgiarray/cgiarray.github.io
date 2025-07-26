@@ -1,0 +1,38 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/web-animations.css';
+import '../../styles/hero-animations.css';
+
+
+const title = "Hero Animations – Web Animations | CGIArray";
+const description = "High-impact hero section animations: 3D loops, motion graphics, and landing visuals to boost engagement.";
+const url = "https://cgiarray.com/web-animations/hero-animations";
+const image = "/images/hero-animations-preview.jpg";
+---
+
+<Layout title={title} description={description} url={url} image={image}>
+  <section class="animation-category-page">
+    <h1>Hero Animations</h1>
+    <p>
+      Eye-catching hero animations for landing pages. Scroll below to explore stunning loops perfect for grabbing user attention.
+    </p>
+
+    <div class="animation-grid">
+      <!-- You can repeat blocks like this for each animation -->
+      <div class="animation-card">
+        <video autoplay loop muted playsinline poster="/images/thumb1.jpg">
+          <source src="/videos/hero1.mp4" type="video/mp4" />
+        </video>
+        <p>Hero Loop #1 – Particle Burst</p>
+      </div>
+
+      <div class="animation-card">
+        <video autoplay loop muted playsinline poster="/images/thumb2.jpg">
+          <source src="/videos/hero2.mp4" type="video/mp4" />
+        </video>
+        <p>Hero Loop #2 – Smooth Mesh Waves</p>
+      </div>
+      <!-- Repeat for more -->
+    </div>
+  </section>
+</Layout>

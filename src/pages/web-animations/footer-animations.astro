@@ -1,0 +1,35 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/web-animations.css';
+import '../../styles/footer-animations.css';
+
+const title = "Footer Animations – Web Animations | CGIArray";
+const description = "Stylish footer animations: subtle transitions, scroll reveals, and decorative loops to wrap up your pages.";
+const url = "https://cgiarray.com/web-animations/footer-animations";
+const image = "/images/footer-animations-preview.jpg";
+---
+
+<Layout title={title} description={description} url={url} image={image}>
+  <section class="animation-category-page">
+    <h1>Footer Animations</h1>
+    <p>
+      Elegant footer animations to leave a lasting impression. Ideal for scroll-based reveals, exits, and decorative loops.
+    </p>
+
+    <div class="animation-grid">
+      <div class="animation-card">
+        <video autoplay loop muted playsinline poster="/images/thumb3.jpg">
+          <source src="/videos/footer1.mp4" type="video/mp4" />
+        </video>
+        <p>Footer Loop #1 – Soft Fade Reveal</p>
+      </div>
+
+      <div class="animation-card">
+        <video autoplay loop muted playsinline poster="/images/thumb4.jpg">
+          <source src="/videos/footer2.mp4" type="video/mp4" />
+        </video>
+        <p>Footer Loop #2 – Sliding Gradient Shapes</p>
+      </div>
+    </div>
+  </section>
+</Layout>

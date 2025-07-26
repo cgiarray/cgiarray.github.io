@@ -1,0 +1,35 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/web-animations.css';
+import '../../styles/vector-animations.css';
+
+const title = "Vector Animations – Web Animations | CGIArray";
+const description = "Lightweight vector animations: SVG effects, Lottie loops, and animated icons built for performance.";
+const url = "https://cgiarray.com/web-animations/vector-animations";
+const image = "/images/vector-animations-preview.jpg";
+---
+
+<Layout title={title} description={description} url={url} image={image}>
+  <section class="animation-category-page">
+    <h1>Vector Animations</h1>
+    <p>
+      Fast-loading vector animations for modern interfaces. Includes Lottie JSON loops, SVG effects, and motion-enhanced icons.
+    </p>
+
+    <div class="animation-grid">
+      <div class="animation-card">
+        <video autoplay loop muted playsinline poster="/images/thumb5.jpg">
+          <source src="/videos/vector1.mp4" type="video/mp4" />
+        </video>
+        <p>Vector Loop #1 – Lottie Micro Interaction</p>
+      </div>
+
+      <div class="animation-card">
+        <video autoplay loop muted playsinline poster="/images/thumb6.jpg">
+          <source src="/videos/vector2.mp4" type="video/mp4" />
+        </video>
+        <p>Vector Loop #2 – Animated SVG Waves</p>
+      </div>
+    </div>
+  </section>
+</Layout>
