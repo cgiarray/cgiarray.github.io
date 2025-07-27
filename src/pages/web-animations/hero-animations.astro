@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import '../../styles/web-animations.css';
 import '../../styles/hero-animations.css';
 import '../../styles/animation-base.css';
-
+import heroAnimations from '../../data/hero-animations.json'; 
 
 
 const title = "Hero Animations – Web Animations | CGIArray";
@@ -18,41 +18,19 @@ const image = "/images/hero-animations-preview.jpg";
     <p>
       Eye-catching hero animations for landing pages. Scroll below to explore stunning loops perfect for grabbing user attention.
     </p>
-
+<!-- Calling of the json file hero-animations.json -->
     <div class="animation-grid">
-      <!-- You can repeat blocks like this for each animation -->
-      <div class="animation-card">
-        <video autoplay loop muted playsinline poster="/images/thumb1.jpg">
-          <source src="/videos/hero1.mp4" type="video/mp4" />
-        </video>
-        <p>Hero Loop #1 – Particle Burst</p>
-      </div>
-
-      <div class="animation-card">
-        <video autoplay loop muted playsinline poster="/images/thumb2.jpg">
-          <source src="/videos/hero2.mp4" type="video/mp4" />
-        </video>
-        <p>Hero Loop #2 – Smooth Mesh Waves</p>
-      </div>
-      <!-- Repeat for more -->
-
-          <!-- You can repeat blocks like this for each animation -->
-      <div class="animation-card">
-        <video autoplay loop muted playsinline poster="/images/thumb1.jpg">
-          <source src="/videos/hero1.mp4" type="video/mp4" />
-        </video>
-        <p>Hero Loop #3 – Particle Burst blue </p>
-      </div>
-
-      <div class="animation-card">
-        <video autoplay loop muted playsinline poster="/images/thumb2.jpg">
-          <source src="/videos/hero2.mp4" type="video/mp4" />
-        </video>
-        <p>Hero Loop #4 – Smooth Mesh Preview</p>
-      </div>
-      
-      <!-- Repeat for more -->
-
+    {heroAnimations.map((item) => (
+    <div class="animation-card">
+      <video autoplay loop muted playsinline poster={item.poster}>
+        <source src={item.video} type="video/mp4" />
+      </video>
+      <p>{item.title}</p>
     </div>
+  ))}
+</div>
+   
+          
+</div>
   </section>
 </Layout>

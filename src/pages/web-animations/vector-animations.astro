@@ -3,7 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import '../../styles/web-animations.css';
 import '../../styles/vector-animations.css';
 import '../../styles/animation-base.css';
-
+import vectorAnimations from '../../data/vector-animations.json';
 
 
 const title = "Vector Animations – Web Animations | CGIArray";
@@ -20,19 +20,17 @@ const image = "/images/vector-animations-preview.jpg";
     </p>
 
     <div class="animation-grid">
-      <div class="animation-card">
-        <video autoplay loop muted playsinline poster="/images/thumb5.jpg">
-          <source src="/videos/vector1.mp4" type="video/mp4" />
-        </video>
-        <p>Vector Loop #1 – Lottie Micro Interaction</p>
-      </div>
-
-      <div class="animation-card">
-        <video autoplay loop muted playsinline poster="/images/thumb6.jpg">
-          <source src="/videos/vector2.mp4" type="video/mp4" />
-        </video>
-        <p>Vector Loop #2 – Animated SVG Waves</p>
-      </div>
+      <!-- Calling of the json file vector-animations.json -->
+    <div class="animation-grid">
+    {vectorAnimations.map((item) => (
+    <div class="animation-card">
+      <video autoplay loop muted playsinline poster={item.poster}>
+        <source src={item.video} type="video/mp4" />
+      </video>
+      <p>{item.title}</p>
+        </div>
+      ))}
+    </div>
     </div>
   </section>
 </Layout>
