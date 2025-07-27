@@ -29,13 +29,16 @@ const is3DAssetsPage = currentPath.startsWith('/3d-assets');
 
   <!-- Search Bar -->
   <div class="search-bar" id="search-bar" role="search" aria-label="Site search">
-    <select class="search-category" aria-label="Search category">
-      <option value="all">All</option>
-      <option value="templates">Templates</option>
-      <option value="3d-assets">3D Assets</option>
-      <option value="plugins">Plugins</option>
-      <option value="animations">Animations</option>
-    </select>
+<select class="search-category" aria-label="Search category">
+  <option value="all">All</option>
+  <option value="web-animations">Web Animations</option>
+  <option value="3d-assets">3D Assets</option>
+  <option value="templates">Templates</option>
+
+  <!-- <option value="plugins">Plugins</option> -->
+
+</select>
+
     <input
       id="search-input"
       type="search"
@@ -53,21 +56,7 @@ const is3DAssetsPage = currentPath.startsWith('/3d-assets');
     <ul class="nav-links">
       <li><a href="/"><i class="fas fa-house"></i></a></li>
 
-  <!-- Dropdown item for Web Animations -->
-      <!-- <li class="dropdown">
-        <div class="mobile-link-wrapper">
-          <a href="/web-animations" class={`nav-link ${isWebAnimationsPage ? 'active' : ''}`} aria-haspopup="true" aria-expanded="false">
-            Web Animations
-          </a>
-          <button class="dropdown-toggle" aria-expanded="false" aria-label="Toggle submenu">˅</button>
-        </div>
-        <ul class="dropdown-menu">
-          <li><a href="#"><i class="fas fa-rocket"></i> Hero Animations</a></li>
-          <li><a href="#"><i class="fas fa-angle-double-down"></i> Footer Animations</a></li>
-          <li><a href="#"><i class="fas fa-vector-square"></i> Vector Animations (SVG + Lottie)</a></li>
-        </ul>
-      </li> -->
-
+      
       
 <li class="dropdown">
   <div class="mobile-link-wrapper">

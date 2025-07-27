@@ -1,22 +1,50 @@
 [
   {
-    "title": "Hero Loop #1 – Particle Burst",
+    "title": "Particle Burst",
+    "category": "hero",
     "video": "/videos/hero1.mp4",
     "poster": "/images/thumb1.jpg"
   },
   {
-    "title": "Hero Loop #2 – Smooth Mesh Waves",
+    "title": "sam daniel",
+    "category": "hero",
     "video": "/videos/hero2.mp4",
-    "poster": "/images/thumb2.jpg"
+    "poster": "/images/thumb1.jpg"
   },
   {
-    "title": "Hero Loop #3 – Glowing Grid Flow",
+    "title": "page Turn",
+    "category": "hero",
     "video": "/videos/hero3.mp4",
-    "poster": "/images/thumb3.jpg"
+    "poster": "/images/thumb1.jpg"
   },
   {
-    "title": "Hero Loop #4 – Glowing new way",
+    "title": "name jungle",
+    "category": "hero",
     "video": "/videos/hero4.mp4",
-    "poster": "/images/thumb4.jpg"
+    "poster": "/images/thumb1.jpg"
+  },
+  {
+    "title": "dasy jungle",
+    "category": "hero",
+    "video": "/videos/hero4.mp4",
+    "poster": "/images/thumb1.jpg"
+  },
+  {
+    "title": "peto jungle",
+    "category": "hero",
+    "video": "/videos/hero4.mp4",
+    "poster": "/images/thumb1.jpg"
+  },
+  {
+    "title": "monkey jungle",
+    "category": "hero",
+    "video": "/videos/hero4.mp4",
+    "poster": "/images/thumb1.jpg"
+  },
+  {
+    "title": "heat jungle",
+    "category": "hero",
+    "video": "/videos/hero4.mp4",
+    "poster": "/images/thumb1.jpg"
   }
 ]
