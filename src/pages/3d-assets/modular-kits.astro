@@ -1,0 +1,61 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/3d-assets.css';
+import '../../styles/animation-base.css';
+import '../../styles/modular-kits.css';
+import modularKits from '../../data/modular-kits.json';
+
+const title = "Modular Kits – 3D Assets | CGIArray";
+const description = "Modular 3D kits for environments, buildings, and level design. Drag-and-drop optimized.";
+const url = "https://cgiarray.com/3d-assets/modular-kits";
+const image = "/images/modular-kits-preview.jpg";
+---
+
+<Layout title={title} description={description} url={url} image={image}>
+  <section class="animation-category-page">
+    <h1>Modular Kits</h1>
+    <p>Snap-together modular 3D kits for building complex environments faster.</p>
+
+    <div class="animation-grid">
+      {modularKits.map((item) => (
+        <div class="animation-card" data-title={item.title} data-category="modular">
+          <img src="/images/dummy-thumb.jpg" alt={item.title} />
+          <p>{item.title}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>
+
+
+
+<!-- ---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/3d-assets.css';
+import '../../styles/animation-base.css';
+import '../../styles/modular-kits.css';
+import modularKits from '../../data/modular-kits.json';
+
+const title = "Modular Kits – 3D Assets | CGIArray";
+const description = "Modular 3D kits for environments, buildings, and level design. Drag-and-drop optimized.";
+const url = "https://cgiarray.com/3d-assets/modular-kits";
+const image = "/images/modular-kits-preview.jpg";
+---
+
+<Layout title={title} description={description} url={url} image={image}>
+  <section class="animation-category-page">
+    <h1>Modular Kits</h1>
+    <p>Snap-together modular 3D kits for building complex environments faster.</p>
+
+    <div class="animation-grid">
+      {modularKits.map((item) => (
+        <div class="animation-card" data-title={item.title} data-category="modular">
+          <video autoplay loop muted playsinline poster="/images/dummy-thumb.jpg">
+            <source src={item.video} type="video/mp4" />
+          </video>
+          <p>{item.title}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout> -->

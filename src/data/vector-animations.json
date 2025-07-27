@@ -1,22 +1,22 @@
 [
   {
-    "title": "Hero Loop #1 – Particle Burst",
+    "title": "Vector Loop #1 – Particle Burst",
     "video": "/videos/hero1.mp4",
-    "poster": "/images/thumb1.jpg"
+    "poster": "/images/dummy-thumb.jpg"
   },
   {
-    "title": "Hero Loop #2 – Smooth Mesh Waves",
+    "title": "Vector Loop #2 – Smooth Mesh Waves",
     "video": "/videos/hero2.mp4",
-    "poster": "/images/thumb2.jpg"
+    "poster": "/images/dummy-thumb.jpg"
   },
   {
-    "title": "Hero Loop #3 – Glowing Grid Flow",
+    "title": "Vector Loop #3 – Glowing Grid Flow",
     "video": "/videos/hero3.mp4",
-    "poster": "/images/thumb3.jpg"
+    "poster": "/images/dummy-thumb.jpg"
   },
   {
-    "title": "Hero Loop #4 – Glowing new way",
+    "title": "Vector Loop #4 – Glowing new way",
     "video": "/videos/hero4.mp4",
-    "poster": "/images/thumb4.jpg"
+    "poster": "/images/dummy-thumb.jpg"
   }
 ]

@@ -5,6 +5,42 @@ import '../../styles/vector-animations.css';
 import '../../styles/animation-base.css';
 import vectorAnimations from '../../data/vector-animations.json';
 
+const title = "Vector Animations – Web Animations | CGIArray";
+const description = "Lightweight vector animations: SVG effects, Lottie loops, and animated icons built for performance.";
+const url = "https://cgiarray.com/web-animations/vector-animations";
+const image = "/images/vector-animations-preview.jpg";
+---
+
+<Layout title={title} description={description} url={url} image={image}>
+  <section class="animation-category-page">
+    <h1>Vector Animations</h1>
+    <p>
+      Fast-loading vector animations for modern interfaces. Includes Lottie JSON loops, SVG effects, and motion-enhanced icons.
+    </p>
+
+    <div class="animation-grid">
+      {vectorAnimations.map((item) => (
+        <div
+          class="animation-card searchable-item"
+          data-title={item.title.toLowerCase()}
+          data-category="vector"
+          data-parent-category="web-animations"
+        >
+          <img src="/images/dummy-thumb.jpg" alt={item.title} />
+          <p>{item.title}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>
+
+
+<!-- ---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/web-animations.css';
+import '../../styles/vector-animations.css';
+import '../../styles/animation-base.css';
+import vectorAnimations from '../../data/vector-animations.json';
 
 const title = "Vector Animations – Web Animations | CGIArray";
 const description = "Lightweight vector animations: SVG effects, Lottie loops, and animated icons built for performance.";
@@ -20,17 +56,14 @@ const image = "/images/vector-animations-preview.jpg";
     </p>
 
     <div class="animation-grid">
-      <!-- Calling of the json file vector-animations.json -->
-    <div class="animation-grid">
-    {vectorAnimations.map((item) => (
-    <div class="animation-card">
-      <video autoplay loop muted playsinline poster={item.poster}>
-        <source src={item.video} type="video/mp4" />
-      </video>
-      <p>{item.title}</p>
+      {vectorAnimations.map((item) => (
+        <div class="animation-card">
+          <video autoplay loop muted playsinline poster="/images/dummy-thumb.jpg">
+            <source src={item.video} type="video/mp4" />
+          </video>
+          <p>{item.title}</p>
         </div>
       ))}
     </div>
-    </div>
   </section>
-</Layout>
+</Layout> -->

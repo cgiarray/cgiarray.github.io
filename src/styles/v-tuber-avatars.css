@@ -1,0 +1,5 @@
+/* V-Tuber Avatars – basic structure for consistent styling */
+.animation-card {
+  width: 400px;
+  background-color: #111; /* match base layout */
+}

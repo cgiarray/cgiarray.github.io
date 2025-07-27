@@ -17,18 +17,53 @@ const image = "/images/footer-animations-preview.jpg";
     <p>
       Elegant footer animations to leave a lasting impression. Ideal for scroll-based reveals, exits, and decorative loops.
     </p>
-    <!-- Calling of the json file footer-animations.json -->
+
     <div class="animation-grid">
-    {footerAnimations.map((item) => (
-    <div class="animation-card">
-      <video autoplay loop muted playsinline poster={item.poster}>
-        <source src={item.video} type="video/mp4" />
-      </video>
-      <p>{item.title}</p>
+      {footerAnimations.map((item) => (
+        <div
+          class="animation-card searchable-item"
+          data-title={item.title.toLowerCase()}
+          data-category="footer"
+          data-parent-category="web-animations"
+        >
+          <img src="/images/dummy-thumb.jpg" alt={item.title} />
+          <p>{item.title}</p>
         </div>
       ))}
     </div>
-        
-    </div>
   </section>
 </Layout>
+
+
+<!-- ---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/web-animations.css';
+import '../../styles/footer-animations.css';
+import '../../styles/animation-base.css';
+import footerAnimations from '../../data/footer-animations.json';
+
+const title = "Footer Animations – Web Animations | CGIArray";
+const description = "Stylish footer animations: subtle transitions, scroll reveals, and decorative loops to wrap up your pages.";
+const url = "https://cgiarray.com/web-animations/footer-animations";
+const image = "/images/footer-animations-preview.jpg";
+---
+
+<Layout title={title} description={description} url={url} image={image}>
+  <section class="animation-category-page">
+    <h1>Footer Animations</h1>
+    <p>
+      Elegant footer animations to leave a lasting impression. Ideal for scroll-based reveals, exits, and decorative loops.
+    </p>
+    
+    <div class="animation-grid">
+      {footerAnimations.map((item) => (
+        <div class="animation-card">
+          <video autoplay loop muted playsinline poster="/images/dummy-thumb.jpg">
+            <source src={item.video} type="video/mp4" />
+          </video>
+          <p>{item.title}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout> -->

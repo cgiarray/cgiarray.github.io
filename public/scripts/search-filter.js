@@ -7,12 +7,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchValue = input.value.toLowerCase();
     const selectedCategory = categorySelect.value;
 
+    // Define subcategories under "web-animations" (exact match with <option>)
+    const webAnimationSubcategories = ['hero', 'footer', 'vector'];
+
     items.forEach(item => {
       const itemTitle = item.getAttribute('data-title').toLowerCase();
       const itemCategory = item.getAttribute('data-category');
 
       const matchesSearch = itemTitle.includes(searchValue);
-      const matchesCategory = selectedCategory === 'all' || itemCategory === selectedCategory;
+
+      let matchesCategory = false;
+
+      if (selectedCategory === 'all') {
+        matchesCategory = true;
+      } else if (selectedCategory === 'web-animations') {  // Fixed: matches <option> value
+        matchesCategory = webAnimationSubcategories.includes(itemCategory);
+      } else {
+        matchesCategory = itemCategory === selectedCategory;
+      }
 
       if (matchesSearch && matchesCategory) {
         item.style.display = 'block';

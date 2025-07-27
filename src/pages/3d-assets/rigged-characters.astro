@@ -1,0 +1,59 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/3d-assets.css';
+import '../../styles/animation-base.css';
+import '../../styles/rigged-characters.css';
+import riggedCharacters from '../../data/rigged-characters.json';
+
+const title = "Rigged Characters – 3D Assets | CGIArray";
+const description = "Fully rigged 3D characters, ready for animation and game engines. Ideal for quick integration into your pipeline.";
+const url = "https://cgiarray.com/3d-assets/rigged-characters";
+const image = "/images/rigged-characters-preview.jpg";
+---
+
+<Layout title={title} description={description} url={url} image={image}>
+  <section class="animation-category-page">
+    <h1>Rigged Characters</h1>
+    <p>Ready-to-animate characters with full rigs—ideal for games, cutscenes, or cinematic animations.</p>
+
+    <div class="animation-grid">
+      {riggedCharacters.map((item) => (
+        <div class="animation-card" data-title={item.title} data-category="rigged">
+          <img src="/images/dummy-thumb.jpg" alt={item.title} />
+          <p>{item.title}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>
+
+<!-- ---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/3d-assets.css';
+import '../../styles/animation-base.css';
+import '../../styles/rigged-characters.css';
+import riggedCharacters from '../../data/rigged-characters.json';
+
+const title = "Rigged Characters – 3D Assets | CGIArray";
+const description = "Fully rigged 3D characters, ready for animation and game engines. Ideal for quick integration into your pipeline.";
+const url = "https://cgiarray.com/3d-assets/rigged-characters";
+const image = "/images/rigged-characters-preview.jpg";
+---
+
+<Layout title={title} description={description} url={url} image={image}>
+  <section class="animation-category-page">
+    <h1>Rigged Characters</h1>
+    <p>Ready-to-animate characters with full rigs—ideal for games, cutscenes, or cinematic animations.</p>
+
+    <div class="animation-grid">
+      {riggedCharacters.map((item) => (
+        <div class="animation-card" data-title={item.title} data-category="rigged">
+          <video autoplay loop muted playsinline poster="/images/dummy-thumb.jpg">
+            <source src={item.video} type="video/mp4" />
+          </video>
+          <p>{item.title}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout> -->
