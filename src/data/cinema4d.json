@@ -1,0 +1,50 @@
+[
+  {
+    "title": "Particle Burst",
+    "category": "cinema4d",
+    "video": "/videos/hero1.mp4",
+    "poster": "/images/thumb1.jpg"
+  },
+  {
+    "title": "sam daniel",
+    "category": "cinema4d",
+    "video": "/videos/hero2.mp4",
+    "poster": "/images/thumb1.jpg"
+  },
+  {
+    "title": "page Turn",
+    "category": "cinema4d",
+    "video": "/videos/hero3.mp4",
+    "poster": "/images/thumb1.jpg"
+  },
+  {
+    "title": "name jungle",
+    "category": "cinema4d",
+    "video": "/videos/hero4.mp4",
+    "poster": "/images/thumb1.jpg"
+  },
+  {
+    "title": "dasy jungle",
+    "category": "cinema4d",
+    "video": "/videos/hero4.mp4",
+    "poster": "/images/thumb1.jpg"
+  },
+  {
+    "title": "peto jungle",
+    "category": "cinema4d",
+    "video": "/videos/hero4.mp4",
+    "poster": "/images/thumb1.jpg"
+  },
+  {
+    "title": "monkey jungle",
+    "category": "cinema4d",
+    "video": "/videos/hero4.mp4",
+    "poster": "/images/thumb1.jpg"
+  },
+  {
+    "title": "heat jungle",
+    "category": "cinema4d",
+    "video": "/videos/hero4.mp4",
+    "poster": "/images/thumb1.jpg"
+  }
+]

@@ -2,11 +2,13 @@
   {
     "title": "Anime Girl VTuber",
     "video": "/videos/vtuber/anime-girl.mp4",
-    "poster": "/images/dummy-thumb.jpg"
+    "poster": "/images/dummy-thumb.jpg",
+    "category": "v-tuber"
   },
   {
     "title": "Chibi Robot",
     "video": "/videos/vtuber/chibi-robot.mp4",
-    "poster": "/images/dummy-thumb.jpg"
+    "poster": "/images/dummy-thumb.jpg",
+    "category": "v-tuber"
   }
 ]

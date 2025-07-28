@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/templates.css';
+import '../../styles/cinema4d.css';
+import '../../styles/animation-base.css';
+import cinema4dTemplates from '../../data/cinema4d.json';
+
+const title = "Cinema 4D Templates – Templates | CGIArray";
+const description = "Stunning Cinema 4D project templates for 3D animations and motion design.";
+const url = "https://cgiarray.com/templates/cinema4d";
+const image = "/images/cinema4d-preview.jpg";
+---
+
+<Layout title={title} description={description} url={url} image={image}>
+  <section class="animation-category-page">
+    <h1>Cinema 4D Templates</h1>
+    <p>
+      Stunning Cinema 4D project templates for 3D animations and motion design.
+    </p>
+
+    <div class="animation-grid">
+      {cinema4dTemplates.map((item) => (
+        <div
+          class="animation-card searchable-item"
+          data-title={item.title.toLowerCase()}
+          data-category="cinema4d"
+          data-parent-category="templates"
+        >
+          <img src="/images/dummy-thumb.jpg" alt={item.title} />
+      <p>{item.title}</p>
+
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>

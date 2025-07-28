@@ -18,7 +18,8 @@ const image = "/images/v-tuber-avatars-preview.jpg";
 
     <div class="animation-grid">
       {vtuberAvatars.map((item) => (
-        <div class="animation-card" data-title={item.title} data-category="vtuber">
+        // <div class="animation-card" data-title={item.title} data-category="vtuber">
+        <div class="animation-card searchable-item" data-title={item.title} data-category="v-tuber"> 
           <img src="/images/dummy-thumb.jpg" alt={item.title} />
           <p>{item.title}</p>
         </div>

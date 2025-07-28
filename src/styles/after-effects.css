@@ -1,0 +1,5 @@
+/* after effects-specific tweaks */
+.animation-card {
+  width: 300px;
+  border: 1px solid #444;
+}

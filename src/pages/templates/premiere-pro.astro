@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import '../../styles/templates.css';
+import '../../styles/premiere-pro.css';
+import '../../styles/animation-base.css';
+import premiereProTemplates from '../../data/premiere-pro.json';
+
+const title = "Adobe Premiere Pro Templates – Templates | CGIArray";
+const description = "Editable Premiere Pro templates for seamless video editing, titles, and effects.";
+const url = "https://cgiarray.com/templates/premiere-pro";
+const image = "/images/premiere-pro-preview.jpg";
+---
+
+<Layout title={title} description={description} url={url} image={image}>
+  <section class="animation-category-page">
+    <h1>Adobe Premiere Pro Templates</h1>
+    <p>
+      Editable Premiere Pro templates for seamless video editing, titles, and effects.
+    </p>
+
+    <div class="animation-grid">
+      {premiereProTemplates.map((item) => (
+        <div
+          class="animation-card searchable-item"
+          data-title={item.title.toLowerCase()}
+          data-category="premiere-pro"
+          data-parent-category="templates"
+        >
+          <img src="/images/dummy-thumb.jpg" alt={item.title} />
+      <p>{item.title}</p>
+
+        </div>
+      ))}
+    </div>
+  </section>
+</Layout>

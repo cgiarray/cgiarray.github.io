@@ -18,7 +18,9 @@ const image = "/images/rigged-characters-preview.jpg";
 
     <div class="animation-grid">
       {riggedCharacters.map((item) => (
-        <div class="animation-card" data-title={item.title} data-category="rigged">
+        // <div class="animation-card" data-title={item.title} data-category="rigged">
+        <div class="animation-card searchable-item" data-title={item.title} data-category="rigged">
+
           <img src="/images/dummy-thumb.jpg" alt={item.title} />
           <p>{item.title}</p>
         </div>

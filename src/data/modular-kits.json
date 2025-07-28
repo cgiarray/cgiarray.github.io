@@ -2,11 +2,25 @@
   {
     "title": "Sci-Fi Corridor Kit",
     "video": "/videos/modular/sci-fi-corridor.mp4",
-    "poster": "/images/dummy-thumb.jpg"
+    "poster": "/images/dummy-thumb.jpg",
+    "category": "modular"
   },
   {
     "title": "Medieval Town Kit",
     "video": "/videos/modular/medieval-town.mp4",
-    "poster": "/images/dummy-thumb.jpg"
+    "poster": "/images/dummy-thumb.jpg",
+    "category": "modular"
+  },
+  {
+    "title": "Medieval suck it",
+    "video": "/videos/modular/medieval-town.mp4",
+    "poster": "/images/dummy-thumb.jpg",
+    "category": "modular"
+  },
+  {
+    "title": "ugliest Kit",
+    "video": "/videos/modular/medieval-town.mp4",
+    "poster": "/images/dummy-thumb.jpg",
+    "category": "modular"
   }
 ]
