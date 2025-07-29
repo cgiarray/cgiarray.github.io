@@ -6,7 +6,8 @@
 }
 
 .animation-card {
-  background: #1a1a1a;
+  /* background: #1a1a1a; */
+  background: #640980;
   border-radius: 12px;
   overflow: hidden;
   width: 360px;
@@ -29,4 +30,27 @@
   text-align: center;
   font-size: 1rem;
   color: #ccc;
+
 }
+
+/* adjustments */
+.animation-card {
+  position: relative;
+  width: 100px;
+  aspect-ratio: 16 / 9; /* Optional if you want a fixed aspect */
+  background: #1a1a1a;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.animation-card img,
+.animation-card video {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+}
+
+

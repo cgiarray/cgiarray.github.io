@@ -10,5 +10,60 @@
     "video": "/videos/vtuber/chibi-robot.mp4",
     "poster": "/images/dummy-thumb.jpg",
     "category": "v-tuber"
+  },
+  {
+    "title": "Cyber Ninja Girl",
+    "video": "/videos/vtuber/cyber-ninja-girl.mp4",
+    "poster": "/images/dummy-thumb.jpg",
+    "category": "v-tuber"
+  },
+  {
+    "title": "Kawaii Cat Boy",
+    "video": "/videos/vtuber/kawaii-cat-boy.mp4",
+    "poster": "/images/dummy-thumb.jpg",
+    "category": "v-tuber"
+  },
+  {
+    "title": "Virtual Pop Idol",
+    "video": "/videos/vtuber/virtual-pop-idol.mp4",
+    "poster": "/images/dummy-thumb.jpg",
+    "category": "v-tuber"
+  },
+  {
+    "title": "Mecha Dragon Avatar",
+    "video": "/videos/vtuber/mecha-dragon-avatar.mp4",
+    "poster": "/images/dummy-thumb.jpg",
+    "category": "v-tuber"
+  },
+  {
+    "title": "Cyberpunk DJ",
+    "video": "/videos/vtuber/cyberpunk-dj.mp4",
+    "poster": "/images/dummy-thumb.jpg",
+    "category": "v-tuber"
+  },
+  {
+    "title": "Pixel Wizard",
+    "video": "/videos/vtuber/pixel-wizard.mp4",
+    "poster": "/images/dummy-thumb.jpg",
+    "category": "v-tuber"
+  },
+  {
+    "title": "Alien Streamer",
+    "video": "/videos/vtuber/alien-streamer.mp4",
+    "poster": "/images/dummy-thumb.jpg",
+    "category": "v-tuber"
+  },
+  {
+    "title": "Neon Samurai",
+    "video": "/videos/vtuber/neon-samurai.mp4",
+    "poster": "/images/dummy-thumb.jpg",
+    "category": "v-tuber"
+  },
+  {
+    "title": "Virtual Elf Princess",
+    "video": "/videos/vtuber/virtual-elf-princess.mp4",
+    "poster": "/images/dummy-thumb.jpg",
+    "category": "v-tuber"
   }
 ]
+

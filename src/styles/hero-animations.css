@@ -1,5 +1,6 @@
 /* Hero animation-specific tweaks */
-.animation-card {
-  width: 400px;
+ .animation-card {
+  width: 460px;
+  border-radius: 1px;
   background-color: #111; /* darker for hero */
-}
+} 
